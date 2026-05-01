@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, ScrollView, StatusBar, Image, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
+//components
+import Button from '@/components/atoms/button'
+
 export default function Explorar() {
   return (
     <SafeAreaProvider>
@@ -10,8 +13,13 @@ export default function Explorar() {
           <View style={styles.scrollView}>
             <Image style={styles.image} source={require('../../assets/images/sobre.jpg')} />
             <Text style={styles.text}>
-              Falando  sobre o aplicativo
+              components
             </Text>
+            <Button buttonText={'ola'} style={'outline'} />
+            <Button buttonText={'ola'} style={'default'} />
+            <Button buttonText={'ola'} style={'secondary'} />
+            <Button buttonText={'ola'} style={'ghost'} />
+            <Button buttonText={'ola'} style={'destructive'} />
           </View>
         </ScrollView>
       </SafeAreaView>

@@ -13,11 +13,15 @@ export const Colors = {
     tint: tintColorLight,
     icon: '#687076',
 
-    colorGreen: '#C4B60F',
+    colorGreenPrimary: '#225D2D',
+    colorGreenSecondary: '#94b506',
     colorPink: '#F3D8F9',
     colorPurple: '#b1b7eb',
-    colorYellow: '#f5bd5e',
+    colorYellow: '#F3C10A',
     colorBrown: '#3c2f07',
+
+    colorDestructive: '#ffb6b3',
+    textColorDestructive: '#f85149',
 
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
@@ -47,3 +51,18 @@ export const Fonts = Platform.select({
     mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
   },
 });
+
+
+//bordas
+export const Borders = {
+  roundedSm: 4,
+  roundedMd: 6,
+  roundedLg: 8,
+  roundedXl: 12,
+
+  //width
+  border: 1,
+  borderSm: 2,
+  borderMd: 3,
+  borderLg: 4,
+}

@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'space-between',
         paddingHorizontal: 16,
-        backgroundColor: Colors.colorGreen
+        backgroundColor: Colors.colorGreenPrimary
     },
     title: {
         fontSize: 18,
