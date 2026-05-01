@@ -2,24 +2,31 @@ import React from 'react';
 import { StyleSheet, Text, ScrollView, StatusBar, Image, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { Colors } from '@/constants/theme';
+
 //components
-import Button from '@/components/atoms/button'
+import SearchBar from '@/components/molecules/searchBar';
+import PlantCard from '@/components/organisms/card'
 
 export default function Explorar() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} edges={['top']}>
-        <ScrollView>
-          <View style={styles.scrollView}>
-            <Image style={styles.image} source={require('../../assets/images/sobre.jpg')} />
-            <Text style={styles.text}>
+        <Text style={styles.text}>
               components
             </Text>
-            <Button buttonText={'ola'} style={'outline'} />
-            <Button buttonText={'ola'} style={'default'} />
-            <Button buttonText={'ola'} style={'secondary'} />
-            <Button buttonText={'ola'} style={'ghost'} />
-            <Button buttonText={'ola'} style={'destructive'} />
+            <SearchBar />
+        <ScrollView>
+          <View style={styles.scrollView}>
+            <PlantCard
+              image={{ uri: 'https://example.com/lavanda.jpg' }}
+              title="Lavanda"
+              description="Planta perene de origem mediterrânea, conhecida pelo seu aroma floral intenso e flores lilases. Ideal para bordaduras e vasos."
+              sunExposure="Pleno sol"
+              wateringFrequency="2x por semana"
+              categories={['ornamental', 'aromática', 'medicinal']}
+              onPress={() => console.log('card pressionado')}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -30,14 +37,15 @@ export default function Explorar() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
-  },
-  scrollView: {
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: Colors.background,
+  },
+  scrollView: {
+    backgroundColor: Colors.background
   },
   text: {
     fontSize: 18,

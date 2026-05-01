@@ -57,8 +57,8 @@ export const Fonts = Platform.select({
 export const Borders = {
   roundedSm: 4,
   roundedMd: 6,
-  roundedLg: 8,
-  roundedXl: 12,
+  roundedLg: 10,
+  roundedXl: 16,
 
   //width
   border: 1,

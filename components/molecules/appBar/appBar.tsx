@@ -10,7 +10,7 @@ export default function AppBar({ title = 'Meu perfil'}) {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => router.push('/perfil')}>
-                <IconUser />
+                <IconUser size={32} color={Colors.icon} />
             </TouchableOpacity>
             <Text style={styles.title}>{title}</Text>
         </View>
