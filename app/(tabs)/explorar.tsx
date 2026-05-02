@@ -1,22 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView, StatusBar, Image, View } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { Colors } from '@/constants/theme';
 
 //components
+import AppBar from '@/components/molecules/appBar';
 import SearchBar from '@/components/molecules/searchBar';
-import PlantCard from '@/components/organisms/card'
+import PlantCard from '@/components/organisms/card';
+import Grid from '@/components/molecules/grid';
 
 export default function Explorar() {
+
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container} edges={['top']}>
-        <Text style={styles.text}>
-              components
-            </Text>
-            <SearchBar />
-        <ScrollView>
+      <SafeAreaView style={styles.container} edges={[]}>
+        <SearchBar />
+        {/* <ScrollView>
           <View style={styles.scrollView}>
             <PlantCard
               image={{ uri: 'https://example.com/lavanda.jpg' }}
@@ -28,9 +27,9 @@ export default function Explorar() {
               onPress={() => console.log('card pressionado')}
             />
           </View>
-        </ScrollView>
+        </ScrollView> */}
+        <Grid />
       </SafeAreaView>
-    </SafeAreaProvider>
   )
 };
 

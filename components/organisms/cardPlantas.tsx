@@ -86,7 +86,7 @@ const InfoBadge: React.FC<{ icon: string; label: string; value: string }> = ({
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-const PlantCard: React.FC<PlantCardProps> = ({
+const CardPlantas: React.FC<PlantCardProps> = ({
   image,
   title,
   description,
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   },
 
   imageWrapper: {
-    height: 210,
+    height: 100,
     width: '50%',
     position: 'relative',
   },
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
 
 // ─── Export ───────────────────────────────────────────────────────────────────
 
-export default PlantCard;
+export default CardPlantas;
 
 // ─── Usage example ────────────────────────────────────────────────────────────
 //

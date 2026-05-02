@@ -112,7 +112,8 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2b1108",
+    backgroundColor: Colors.colorBrown,
+    marginHorizontal: 16,
   },
   // Ícone: Casa
   iconHouseRoof: {

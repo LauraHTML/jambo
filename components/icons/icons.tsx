@@ -59,3 +59,20 @@ export const IconSearch = ({ color, size }: IconeNav) => {
         </Svg>
     )
 }
+
+//perfil
+export const IconProfile = ({ color, size }: IconeNav) => {
+    return (
+        <Svg width={size} height={size} viewBox="0 0 256 256" fill="none">
+            <Path fill={color} d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z" />
+        </Svg>
+    )
+}
+
+export const IconNotification = ({ color, size }: IconeNav) => {
+    return (
+        <Svg width={size} height={size} viewBox="0 0 256 256" fill="none">
+            <Path fill={color} d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z" />
+        </Svg>
+    )
+}

@@ -1,20 +1,25 @@
 import React from 'react';
-import { ScrollView, StatusBar, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
+import { Colors } from '@/constants/theme'
+
 //components
-import AppBar from "@/components/molecules/appBar/appBar";
+import CardPlantas from '@/components/organisms/cardPlantas'
 
 export default function HomeScreen() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container} edges={['top']}>
-        <AppBar />
-        <ScrollView style={styles.scrollView}>
-
-        </ScrollView>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <SafeAreaView style={styles.container} edges={[]}>
+      <ScrollView style={styles.scrollView}>
+        <CardPlantas
+          image={require('@/assets/images/sobre.jpg')}
+          title={'teste'}
+          sunExposure={'super sol'}
+          wateringFrequency={'aguar'}
+          categories={['medicinal']}
+        />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -23,7 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    backgroundColor: 'pink',
+    backgroundColor: Colors.background,
   },
   text: {
     fontSize: 42,

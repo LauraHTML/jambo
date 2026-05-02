@@ -1,22 +1,19 @@
 import React from 'react';
-import { ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import { Colors } from '@/constants/theme'
+import { Colors } from '@/constants/theme';
 
 //components
-import AppBar from "@/components/molecules/appBar/appBar";
+import AppBar from "@/components/molecules/appBar";
 
 export default function HomeScreen() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container} edges={['top']}>
-        <AppBar />
+      <SafeAreaView style={styles.container} edges={[]}>
         <ScrollView style={styles.scrollView}>
-          
+
         </ScrollView>
       </SafeAreaView>
-    </SafeAreaProvider>
   );
 };
 

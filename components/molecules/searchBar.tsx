@@ -24,17 +24,18 @@ const styles = StyleSheet.create({
     margin: 4,
     height: 44,
     padding: 2,
-    borderWidth: 1,
     width: '90%',
     borderRadius: Borders.roundedXl,
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: Colors.inputBackground
   },
   iconView:{
     width: 32,
     height: 32,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    margin: 4,
   }
 });
