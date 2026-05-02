@@ -118,8 +118,8 @@ const PlantCard: React.FC<PlantCardProps> = ({
 
       {/* Body */}
       <View style={styles.infos}>
-        <Text style={styles.title}>{title}</Text>
-        <View style={styles.divider} />
+          <Text style={styles.title}>{title}</Text>
+          <View style={styles.divider} />
 
         {/* Info badges */}
         <View style={styles.infoCol}>
