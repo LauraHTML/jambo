@@ -5,15 +5,15 @@ type Badge = {
     badgeText: string,
     style?: 'pink' | 'greenPrimary' | 'greenSecondary' | 'purple' | 'yellow' ,
     textStyle?: 'textDefault' | 'textSecondary' ,
-    icone?: string,
+    icon?: string,
     onPress?: () => void
 }
 
-export default function Badge({badgeText, style = 'pink', textStyle = 'textDefault', icone}:Badge){
+export default function Badge({badgeText, style = 'pink', textStyle = 'textDefault', icon}:Badge){
     return(
         <View style={[styles.badge, styles[style]]}>
             <Text style={styles[textStyle]}>{badgeText}</Text>
-            {icone}
+            <Text>{icon}</Text>
         </View>
     )
 }
@@ -21,8 +21,8 @@ export default function Badge({badgeText, style = 'pink', textStyle = 'textDefau
 const styles = StyleSheet.create({
     badge:{
         height: 32,
-        paddingHorizontal: 4,
-        paddingVertical: 6,
+        paddingHorizontal: 6,
+        paddingVertical: 4,
         display: 'flex',
         flexDirection: 'row',
         gap: 4,
@@ -48,8 +48,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     yellow:{
-        borderColor: Colors.colorYellow,
-        borderWidth: Borders.border
+        backgroundColor: Colors.colorYellow,
     },
     textDefault:{
         color: Colors.text,
