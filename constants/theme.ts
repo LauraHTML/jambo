@@ -16,6 +16,7 @@ export const Colors = {
     colorGreenPrimary: '#225D2D',
     colorGreenSecondary: '#94b506',
     colorPink: '#F3D8F9',
+    colorWhite: '#fff',
     colorPurple: '#b1b7eb',
     colorYellow: '#F3C10A',
     colorBrown: '#3c2f07',

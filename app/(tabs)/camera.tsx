@@ -10,7 +10,7 @@ import SearchBar from '@/components/molecules/searchBar';
 import PlantCard from '@/components/organisms/card';
 import Grid from '@/components/molecules/grid';
 
-export default function Explorar() {
+export default function Camera() {
 
   return (
       <SafeAreaView style={styles.container} edges={[]}>

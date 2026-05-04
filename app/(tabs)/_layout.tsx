@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 
 import React from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View, StatusBar, Image } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { HapticTab } from '@/components/haptic-tab';
@@ -27,13 +27,13 @@ function Home({ color, size, focused }: IconeNav) {
   );
 }
 
-function Explore({ color, size, focused }: IconeNav) {
+function Explore({ focused }: IconeNav) {
   return (
-    <View style={{ width: size, height: size, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ width: 32, height: 32, alignItems: 'center', justifyContent: 'center' }}>
       {focused ? (
-        <IconExploreFill size={size} color={color} />
+        <Image height={32} width={32} source={require('@/assets/images/cameraAiFocused.svg')} />
       ) : (
-        <IconPlant size={size} color={color} />
+        <Image height={32} width={32} source={require('@/assets/images/cameraAi.svg')} />
       )}
     </View>
   );
@@ -60,6 +60,10 @@ export default function TabLayout() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
+        <StatusBar 
+        backgroundColor={Colors.colorBrown} // Cor de fundo (Android)
+        barStyle="light-content"  // Estilo dos ícones: 'default', 'light-content', 'dark-content'
+        />
         <Tabs
           screenOptions={{
             tabBarActiveTintColor: ACTIVE_COLOR,
@@ -83,17 +87,17 @@ export default function TabLayout() {
           }}>
 
           <Tabs.Screen
-            name="explorar"
-            options={{
-              title: 'Explorar',
-              tabBarIcon: ({ color, focused }) => <Explore color={color} size={32} focused={focused} />,
-            }}
-          />
-          <Tabs.Screen
             name="index"
             options={{
               title: 'Home',
-              tabBarIcon: ({ color, focused }) => (<Home color={color} size={32} focused={focused} />),
+              tabBarIcon: ({ color, focused }) => <Home color={color} size={32} focused={focused} />,
+            }}
+          />
+          <Tabs.Screen
+            name="camera"
+            options={{
+              title: 'Câmera',
+              tabBarIcon: ({ color, focused }) => (<Explore />),
             }}
           />
           <Tabs.Screen
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.colorBrown,
-    marginHorizontal: 16,
+    marginHorizontal: 0,
   },
   // Ícone: Casa
   iconHouseRoof: {

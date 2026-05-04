@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     },
     greenPrimary:{
         backgroundColor: Colors.colorGreenPrimary,
-        color: Colors.background,
         fontSize: 18,
     },
     greenSecondary:{
@@ -55,7 +54,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     textSecondary:{
-        color: Colors.background,
+        color: Colors.colorWhite,
         fontSize: 16,
+        fontWeight: 'bold',
     }
 })

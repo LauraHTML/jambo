@@ -76,7 +76,6 @@ const CategoryTag: React.FC<{ category: PlantCategory }> = ({ category }) => {
 const PlantCard: React.FC<PlantCardProps> = ({
   image,
   title,
-  description,
   sunExposure,
   wateringFrequency,
   categories,
@@ -127,7 +126,7 @@ const PlantCard: React.FC<PlantCardProps> = ({
         </View>
         <View style={styles.infoRow}>
           {categories.map((categorie) => (
-            <Badge key={categorie} badgeText={categorie} style={'greenPrimary'} textStyle='textSecondary' />
+            <Badge key={categorie} badgeText={categorie} style={'greenPrimary'} textStyle={'textSecondary'} />
           ))}
         </View>
       </View>

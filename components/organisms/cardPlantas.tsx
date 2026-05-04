@@ -34,7 +34,6 @@ type WateringFrequency =
 interface PlantCardProps {
     image: ImageSourcePropType;
     title: string;
-    description: string;
     sunExposure: string;
     wateringFrequency: string;
     categories: string[];
@@ -89,7 +88,6 @@ const InfoBadge: React.FC<{ icon: string; label: string; value: string }> = ({
 const CardPlantas: React.FC<PlantCardProps> = ({
     image,
     title,
-    description,
     sunExposure,
     wateringFrequency,
     categories,
@@ -125,7 +123,7 @@ const CardPlantas: React.FC<PlantCardProps> = ({
                     </View>
                     <View style={styles.infoRow}>
                         {categories.map((categorie) => (
-                            <Badge key={categorie} badgeText={categorie} style={'greenPrimary'} textStyle='textSecondary' />
+                            <Badge key={categorie} badgeText={categorie} style={'greenPrimary'} textStyle={'textSecondary'} />
                         ))}
                     </View>
                 </View>

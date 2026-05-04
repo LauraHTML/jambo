@@ -9,7 +9,7 @@ type Button = {
     onPress?: () => void
 }
 
-export default function Button({buttonText, style = 'default', textStyle = 'default', icone, onPress}:Button){
+export default function Button({buttonText, style = 'default', textStyle = 'textDefault', icone, onPress}:Button){
     return(
         <TouchableOpacity style={[styles.button, styles[style]]} onPress={onPress}>
             <Text style={styles[textStyle]}>{buttonText}</Text>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
     textDefault:{
         backgroundColor: Colors.colorGreenPrimary,
-        color: Colors.background,
+        color: Colors.colorWhite,
         fontSize: 18,
     },
     textSecondary:{
