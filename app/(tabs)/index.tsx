@@ -1,8 +1,9 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
-
+import { useCameraDevice, useCameraPermission } from 'react-native-vision-camera';
+import { Redirect ,useRouter } from 'expo-router';
 
 import { Colors } from '@/constants/theme';
 
@@ -14,6 +15,21 @@ import Grid from '@/components/molecules/grid';
 
 export default function HomeScreen() {
 
+  const { hasPermission } = useCameraPermission();
+  //camera de tras
+  const device = useCameraDevice('back');
+
+  const router = useRouter();
+  const redirectToPermissions = !hasPermission;
+
+  if (redirectToPermissions) {
+    return <Redirect href={'/permissions'} />
+  }
+
+  if(!device){
+    return( <Text>Sem câmera</Text>)
+  }
+
   return (
     <SafeAreaView style={styles.container} edges={[]}>
       <StatusBar
@@ -23,19 +39,6 @@ export default function HomeScreen() {
       />
       <SearchBar />
       <Image height={32} width={32} source={require('@/assets/images/cameraAiFocused.svg')} />
-      {/* <ScrollView>
-          <View style={styles.scrollView}>
-            <PlantCard
-              image={{ uri: 'https://example.com/lavanda.jpg' }}
-              title="Lavanda"
-              description="Planta perene de origem mediterrânea, conhecida pelo seu aroma floral intenso e flores lilases. Ideal para bordaduras e vasos."
-              sunExposure="Pleno sol"
-              wateringFrequency="2x por semana"
-              categories={['ornamental', 'aromática', 'medicinal']}
-              onPress={() => console.log('card pressionado')}
-            />
-          </View>
-        </ScrollView> */}
       <Grid />
     </SafeAreaView>
   )

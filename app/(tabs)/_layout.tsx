@@ -97,7 +97,7 @@ export default function TabLayout() {
             name="camera"
             options={{
               title: 'Câmera',
-              tabBarIcon: ({ color, focused }) => (<Explore />),
+              tabBarIcon: ({ color, focused }) => (<Explore color={color} size={32} focused={focused} />),
             }}
           />
           <Tabs.Screen
